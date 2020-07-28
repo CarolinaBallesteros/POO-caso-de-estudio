@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+    <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+    <title>Restaurante Bogota</title>
+</head>
+
+<body style="background-color: #2f4f4f;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">RestauranteBogota</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a> <a
+                    class="nav-item nav-link" href="#">Menu</a> <a class="nav-item nav-link" href="#">Ubicación</a>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron" style="background-color:#dcdcdc;">
+        <img th:src="@{img/fd.jpg}" width="1720" alt="">
+        <hr class="my-4">
+        <a th:href="@{/restauranteBogota/modificar}" class="btn btn-warning" href="#" role="button">Reservas</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div th:each="post : ${posts}" class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img th:src="${post.url}" height="200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${post.titulo}" class="card-title">Card title</h5>
+                        <p th:text="${post.descripcion}" class="card-text">Some quick
+                            example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-warning">Ir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small indigo">
+        <div class="container" style="background-color:white;">
+            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" style="color: black;">Sobre nosotros</a>
+                    </h6>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" style="color: black;">Productos</a>
+                    </h6>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" style="color: black;">Ayuda</a>
+                    </h6>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!" style="color: black;">Contacto</a>
+                    </h6>
+                </div>
+            </div>
+            <hr class="rgba-white-light" style="margin: 0 15%;">
+            <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+                <div class="col-md-8 col-12 mt-5">
+                    <p style="line-height: 1.7rem">El precio indicado en la carta es una referencia del valor promedio
+                        del restaurante consumiendo una entrada,
+                        un plato fuerte y un postre Está diseñado para ofrecerte una experiencia simple sin dejar de
+                        lado lo delicioso. Podrás disfrutar de una carta con variedad de 10 entradas,
+                        12 platos fuertes y 4 postres que nunca pueden faltar en una comida..</p>
+                </div>
+            </div>
+        </div>       
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+    </footer>
+</body>
+</html>

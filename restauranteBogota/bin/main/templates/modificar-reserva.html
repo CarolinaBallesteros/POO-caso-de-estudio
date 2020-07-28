@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" href="../static/css/bootstrap.css">
+    <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+    <script th:src="@{/js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+    <title>Restaurante Bogota</title>
+</head>
+
+<body style="background-color: #2f4f4f">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">RestauranteBogota</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a> <a
+                    class="nav-item nav-link" href="#">Menu</a> <a class="nav-item nav-link" href="#">Ubicación</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h3 style="color: white">Registrar Reservas</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/restauranteBogota/crearReserva}" th:object="${cliente}"
+                        method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Numero Documento</label>
+                                <input type="text" th:field="*{numeroDocumento}" class="form-control"
+                                    id="numeroDocumento" placeholder="Numero Documento" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Nombre Completo</label>
+                                <input type="text" th:field="*{nombreCompletoCliente}" class="form-control"
+                                    id="nombreCompletoCliente" placeholder="Nombre Completo" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Numero Contacto</label>
+                                <input type="text" th:field="*{numeroContacto}" class="form-control" id="numeroContacto"
+                                    placeholder="Numero Contacto" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="email" class="col-form-label">Correo</label>
+                                <input type="text" th:field="*{correo}" class="form-control" id="correo"
+                                    placeholder="Correo" />
+                            </div>
+  					
+							<div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Estado</label>
+                                <input type="text" th:field="*{estado}" class="form-control" id="estado"
+                                    placeholder="Estado" />
+                            </div>
+                                                      
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Cantidad Personas</label>
+                                <input type="text" th:field="*{cantidadPersonas}" class="form-control"
+                                    id="cantidadPersonas" placeholder="Cantidad Personas" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Motivo</label>
+                                <input type="text" th:field="*{motivo}" class="form-control" id="motivo"
+                                    placeholder="Motivo" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Tipo Decoración</label>
+                                <input type="text" th:field="*{tipoDecoracion}" class="form-control" id="tipoDecoracion"
+                                    placeholder="Tipo Decoración" />
+                            </div>
+                            
+                            <div class="form-group col-md-8">
+                            	<label for="name" class="col-form-label">Fecha Reserva</label>									  
+							    <input type="date" th:field="*{fechaReserva}" >							  
+							</div>
+                            
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-warning" value=" Enviar ">
+                            </div>
+                            <input type="hidden" id="id" th:field="*{id}">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h5 style="color: white">
+            <center>Integrantes: Liliana Diaz - Andres Luna - Carolina Ballesteros</center>
+        </h5>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    
+</body>
+
+</html>
